@@ -5,7 +5,7 @@ let handler = async (m, { conn, isROwner }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
         let img = await q.download()
-        if (!img) throw `balas gambarnya!`
+        if (!img) throw `photo?`
         conn.updateProfilePicture(bot, img)
         m.reply('```Sukses```')
     }
