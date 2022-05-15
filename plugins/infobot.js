@@ -19,18 +19,16 @@ ${gy} Library : *Baileys-MD*
 ${gy} Language : *Javascript*
 ${gy} Database : *MongoDB*
 ${gy} Version : *${versibot}*
-${gy} Developer : *@6285346545126*
+${gy} Developer : *@94771323434*
 ${gy} Runtime : *${runtime}*
 ${gy} Prefix : *Multi Prefix 「 ${usedPrefix} 」*
 ${gy} Mode : *${global.opts['self'] ? 'Self' : 'Public'}*
-${gy} User : *${usergakdaftar}*
-${gy} Register : *${userdaftar}*
 ${sb}
 `.trim()
-var as = `Tanggal : ${week}, ${date}\nWaktu : ${a} (WIB)`
- //conn.sendTBL(m.chat, infonyacok, as, fla + `${command}`, `Source Code Bot ✨`, `https://github.com/raselcomel/lucubot-md`, null, null, `Menu`, `${usedPrefix}menu`, null, null, null, null, m, 
+var as = `🙂🌚`
+ //conn.sendTBL(m.chat, infonyacok, as, fla + `${command}`, `GROUP`, `https://chat.whatsapp.com/HEP90W2NX9Y4YISOzCu7AQ`, null, null, `Menu`, `${usedPrefix}menu`, null, null, null, null, m, 
      conn.sendBL(m.chat, infonyacok, as, fla + `${command}`, [[`SC Bot`, `${usedPrefix}sc`], [`Menu`, `${usedPrefix}menu`]], m,        
-           {mentions: ['6285346545126@s.whatsapp.net']})
+           {mentions: ['94771323434@s.whatsapp.net']})
 
 }
 handler.help = ['infobot']
