@@ -2,8 +2,8 @@ const { facebookdl, facebookdlv2, facebookdlv3 } = require('@bochilteam/scraper'
 const { Facebook } = require('xfarr-api')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n*${usedPrefix + command}* https://fb.watch/aYv0jAffAO/`
-  if (!args[0].match(/(https:\/\/.www.facebook.com || fb.watch)/gi)) throw `*Link salah! Perintah ini untuk mengunduh media facebook dengan link*\n\ncontoh:\n${usedPrefix + command} https://fb.watch/aYv0jAffAO/`
+  if (!args[0]) throw ` url?\n\ncontoh:\n*${usedPrefix + command}* https://fb.watch/affAO/`
+  if (!args[0].match(/(https:\/\/.www.facebook.com || fb.watch)/gi)) throw `*Link wrong! :\n${usedPrefix + command} https://fb.watch/aYvAO/`
   await m.reply(wait)
   await conn.reply(m.chat, 'Downloading media from Facebook', 0, {
   contextInfo: { mentionedJid: [m.sender],
