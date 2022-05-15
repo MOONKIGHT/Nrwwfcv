@@ -19,7 +19,7 @@ let handler = async (m, { conn, isAdmin, isOwner, args, usedPrefix, command }) =
 contoh:
 ${usedPrefix + command} tutup
 ${usedPrefix + command} buka
-	`.trim(), wm, null, [['Buka', '#gc 1'], ['Tutup', '#gc 0']])
+	`.trim(), wm, null, [['Open', '#gc 1'], ['Close', '#gc 0']])
 		throw false
 	}
         try {
