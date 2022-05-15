@@ -14,7 +14,7 @@ await sock.groupParticipantsUpdate(
 )
 //conn.groupRemove(m.chat, [usr]); return;
 } 
-  if(!text && !m.quoted) return conn.reply(m.chat, `tag yang mau di jadiin admin`, m) 
+  if(!text && !m.quoted) return conn.reply(m.chat, `tag`, m) 
   let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
   for (let user of users) if (user.endsWith('@s.whatsapp.net')) await sock.groupParticipantsUpdate(
     m.chat, 
