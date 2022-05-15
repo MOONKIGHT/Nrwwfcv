@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   //var sel = await ras.data.data.url
   conn.sendStimg(m.chat, sel, m, { packname: packname, author: author })
     } catch {
-    m.reply('emoji tidak support, silahkan ganti salah satu emoji atau ubah posisi emojinya!')  
+    m.reply('eorr')  
   }
 }
 handler.help = ['semojimix <emoji+emoji>']
