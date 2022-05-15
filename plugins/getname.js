@@ -11,7 +11,7 @@ let handler = async(m, { conn, command }) => {
     let name = await conn.getName(who)
     m.reply(name)
   } catch {
-    throw `sorry gk bisa coba yang lain⍨`
+    throw `sorry⍨`
     }
   }
 }
