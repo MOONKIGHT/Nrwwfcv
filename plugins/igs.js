@@ -1,8 +1,8 @@
 const { igstory, igstory2 } = require('../lib/scrape')
 const { instagramStory, instagramStoryv2 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `uhm.. username nya mana?\n\ncontoh:\n\n${usedPrefix + command} rasel.ganz`
-    if (args[0].startsWith('http') || args[0].startsWith('@')) throw `username salah\n\ncontoh: *${usedPrefix}${command} rasel.ganz*`
+    if (!args[0]) throw `url?\n\n:\n\n${usedPrefix + command} imash_nidusha`
+    if (args[0].startsWith('http') || args[0].startsWith('@')) throw `username wrong\n\: *${usedPrefix}${command} imash_nidusha*`
     try {
     await m.reply(wait)
     await conn.reply(m.chat, `Downloading ig story ${args[0]}`, 0, {
