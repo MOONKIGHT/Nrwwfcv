@@ -3,7 +3,7 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
      var limit
      if((isOwner || isPrems)) limit = 250
      else limit = 100
-     if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
+     if (!args[0]) throw `url?\n\:\n${usedPrefix + command} https://www.mediafire.com/file/941xc-.apk/file`
      if (!args[0].match(/mediafire/gi)) throw `url salah`
      const sentMsg = await m.reply(wait)
      await conn.reply(m.chat, `Downloading media from Mediafire`, 0, {
@@ -30,7 +30,7 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
 🎚 *Size:* ${filesizeH}
 🗃 *Extension:* ${ext}
 📤 *Uploaded:* ${aploud}
-${isLimit ? `❌ *Ukuran file di atas ${limit} MB, download sendiri*\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}` 
+${isLimit ? `❌ *Ukuran file di atas ${limit} MB, download send\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}` 
      
      if(ss) await conn.sendFile(m.chat, ss, 'screenshot.png', capt, sentMsg, 0, {jpegThumbnail: ss})
      try {
