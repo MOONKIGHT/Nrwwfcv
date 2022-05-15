@@ -133,7 +133,7 @@ let handler = async (m, { conn, command }) => {
   let groupsIn = groups.filter(v => !v.read_only).length 
   let blok = await conn.fetchBlocklist()
   let goblock = blok.length
-  let txt = `Merespon dalam ${speed} millidetik
+  let txt = ` ${speed} 
 ${readMore}
 💬 *Chat Info:*
 • *${groups.length}* Group Chats
