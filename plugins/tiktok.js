@@ -1,8 +1,8 @@
 const { Tiktok } = require('xfarr-api')
 const { tiktok } = require('../lib/scrape')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
-  if (!args[0].match(/tiktok/gi)) throw `url salah`
+  if (!args[0]) throw `url?\n\nco:\n${usedPrefix + command} https://vt.tiktok.com/ZDq/`
+  if (!args[0].match(/tiktok/gi)) throw `url wrong`
   const sentMsg = await m.reply(wait)
   await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
   contextInfo: { mentionedJid: [m.sender],
