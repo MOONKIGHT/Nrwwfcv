@@ -1,5 +1,5 @@
 let handler = async(m, { conn }) => {
-  let a = "https://telegra.ph/file/90d392a787612bd894610.png"
+  let a = "https://i.imgur.com/rSNX7Z9.jpeg"
   conn.sendStimg(m.chat, a, m, {packname: packname, author: author })
 }
 handler.customPrefix= /^makasih|kasih|mksh|thank|thanks$/i
