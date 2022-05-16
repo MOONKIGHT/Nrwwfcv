@@ -2,7 +2,7 @@ let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, usedPrefix, command, text, args }) => {
     //try {
     var q = m.quoted ? m.quoted : m
-    if(!q) throw `Kirim atau balas media dengan caption *${usedPrefix}${command}*\nnote: video maksimal 10 detik`
+    if(!q) throw ` caption *${usedPrefix}${command}*\nnote: video 10 min`
     var mime = (q.msg || q).mimetype || ''
     try {
     if (/webp/.test(mime)) {
@@ -28,7 +28,7 @@ let handler = async (m, { conn, usedPrefix, command, text, args }) => {
         }
     } finally {
         if(sel) conn.sendStimg(m.chat, sel, m, { packname: packname, author: author })
-        else throw `Kirim atau balas media dengan caption *${usedPrefix}${command}*\nnote: video maksimal 10 detik`
+        else throw `caption *${usedPrefix}${command}*\nnote: video 10 min`
        //throw e //`Kirim atau balas media dengan caption *${usedPrefix}${command}*\nnote: video maksimal 10 detik`
   }
 }
