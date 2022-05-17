@@ -1,6 +1,6 @@
 const { youtubeSearch } = require('@bochilteam/scraper')
 let handler = async (m, { conn, usedPrefix, command, text, args }) => {
-  if (!text) throw `Cari apa?\ncontoh: *${usedPrefix}${command} dj i hope you're happy*`
+  if (!text) throw `?\nco: *${usedPrefix}${command} dj i hope you're happy*`
   
   let results = await youtubeSearch(text)
   let thumb = results.video[0].thumbnail
