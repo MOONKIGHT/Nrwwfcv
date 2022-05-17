@@ -550,16 +550,16 @@ module.exports = {
                         }
                     } finally {
                         // m.reply(util.format(_user))
-                        if (typeof plugin.after === 'function') {
+                        /*if (typeof plugin.after === 'function') {
                             try {
                                 await plugin.after.call(this, m, extra)
                             } catch (e) {
                                 console.error(e)
                             }
                         }
-                        if (m.limit) m.reply(+ m.limit + ' ' + 'Limit terpakai')
+                        if (m.limit) m.reply(+ m.limit + ' ' + '')
                     }
-                    break
+                    break*/
                 }
             }
         } catch (e) {
@@ -658,6 +658,7 @@ module.exports = {
                     }
                 })
                 break
+                /*
         }
     },
     async delete({ remoteJid, fromMe, id, participant }) {
@@ -678,7 +679,7 @@ Untuk mematikan fitur ini, ketik #enable delete
         })
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
-}
+}*/
 
 global.dfail = async (type, m, conn) => {
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch((_) => "https://i.imgur.com/034hRf9.jpeg")
