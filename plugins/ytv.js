@@ -3,8 +3,8 @@ let axios = require('axios')
 const { servers, ytv } = require('../lib/y2mate')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, text, args, command, isPrems, isOwner }) => {
-  if (!text) throw `uhm urlnya mana?`
-  let ras = `url salah, perintah ini untuk mengunduh watch/shorts`
+  if (!text) throw `url?`
+  let ras = `url wrong watch/shorts`
   if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)|(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)/gi)) throw ras
   let limit
   if((isOwner || isPrems)) limit = 300
