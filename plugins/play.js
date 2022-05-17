@@ -2,16 +2,16 @@ const { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilt
 const { servers, yta } = require('../lib/y2mate')
 let handler = async (m, { conn, isOwner, isPrems, command, text, usedPrefix }) => {
     let lang = db.data.users[m.sender].language 
-    if(!text) throw `Eg: ${usedPrefix}${command} i see your monster`
+    if(!text) throw `Contoh: ${usedPrefix}${command} i see your monster`
     m.reply(await conn.trans(lang, wait))
     let anu = await youtubeSearch(text)
     let vid = anu.video
     let vide 
     if (/playrand(om)?$/i.test(command)) vide = conn.rand(vid)
     else vide = vid[0]
-    if(!vide) return conn.sendB(m.chat, await conn.trans('Video/Audio not found'), wm, null, [[await conn.trans('Coba Lagi'), `.play ${text} lainnya`]], m) 
+    if(!vide) return conn.sendB(m.chat, await conn.trans('Video/Audio Tidak ditemukan'), wm, null, [[await conn.trans('Coba Lagi'), `.play ${text} lainnya`]], m) 
     let { authorName, authorAvatar, title, description, url, thumbnail, videoId, durationH, viewH, publishedTime } = await vide
-    let capt = `🎬 *YouTube Downloader*
+    let capt = `🎬 *YouTube Play*
   
 📌 *Title:* ${title}
 📮 *ID:* ${videoId}
@@ -21,8 +21,8 @@ let handler = async (m, { conn, isOwner, isPrems, command, text, usedPrefix }) =
 👑 *Author Name:* ${authorName}
 🚀 *Source:* ${url}
 📝 *Description:* ${description}`
-    await conn.sendBD(m.chat, capt, wm, img, [['Audio ', `${usedPrefix}yda ${url}`], ['Video', `${usedPrefix}ydv ${url}`], [`SCRIPT', `${usedPrefix}sc`]], m, {
-     fileName: await conn.trans(lang, 'MOON KNIGHT BOT~Z')+` ${m.name} 🤩`, mimetype: global.td, fileLength: global.fsdx, pageCount: global.pcdx,
+    await conn.sendBD(m.chat, capt, wm, img, [['🎧 Audio 🎧', `${usedPrefix}yta ${url}`], ['📽 Video 📽', `${usedPrefix}ytv ${url}`], [`🔎 Play ${await conn.trans(lang, 'Acak')} 🔍`, `${usedPrefix}playrand ${text}`]], m, {
+     fileName: await conn.trans(lang, 'Selamat menonton')+` ${m.name} 🤩`, mimetype: global.td, fileLength: global.fsdx, pageCount: global.pcdx,
      mentions: [m.sender],
      contextInfo: {
      jpegThumbnail: await(await fetch(thumbd)).buffer(),
@@ -39,7 +39,7 @@ let handler = async (m, { conn, isOwner, isPrems, command, text, usedPrefix }) =
   if (user.limit < 1 ) return  
   let limit
   if((isOwner || isPrems)) limit = 100
-  else limit = 200
+  else limit = 30
   try {
   let audi = await youtubedl(url)
   let { thumbnail, audio, title } = audi
