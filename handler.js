@@ -72,7 +72,7 @@ module.exports = {
 
         global.td = pickRandom([jax, jbx, jcx, jdx, jex])
         global.docux = img
-        global.nd = pickRandom(['@rasel.ganz', 'rasel ganz', 'rasel comel ', 'rasel', '𝓇𝒶𝓈ℯ𝓁', '𝑟𝑎𝑠𝑒𝑙', '𝒓𝒂𝒔𝒆𝒍', '𝐫𝐚𝐬𝐞𝐥', '𝔯𝔞𝔰𝔢𝔩', '𝖗𝖆𝖘𝖊𝖑', '𝕣𝕒𝕤𝕖𝕝', '𝚛𝚊𝚜𝚎𝚕', 'r̸a̸s̸e̸l̸', 'r༙a༙s༙e༙l༙', 'r͜͡a͜͡s͜͡e͜͡l͜͡', 'rྂaྂsྂeྂlྂ', 'rཽaཽsཽeཽlཽ', 'r̽aྂsཽe͠ ʟ', 'ʳᵃˢᵉˡ'])
+        global.nd = pickRandom(['⃧ᴍ⃥⃧͢🌑⃥⃭⃧🌕̶̷⃮⃧ɴ ⃥ᴋ⃯⃗ɴ⃧ɪ⃬⃗ɢ⃧ʜ⃯⃗ᴛ ʙ⃔⃧ᴏ⃕⃧ᴛ⃕-ᴢ⃕🌙', 'MOON KNIGHT BOT~Z'])
         global.time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
 
         if (!m) return
@@ -94,7 +94,7 @@ module.exports = {
                     if (!isNumber(user.level)) user.level = 0
                     if (!isNumber(user.exp)) user.exp = 0
                     if (!isNumber(user.title)) user.title = ''
-                    if (!isNumber(user.limit)) user.limit = 20
+                    if (!isNumber(user.limit)) user.limit = 200
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!isNumber(user.lastjoin)) user.lastjoin = 0
                     if (!isNumber(user.money)) user.money = 0
@@ -620,7 +620,7 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                        let pp = 'https://telegra.ph/file/118a75cb0c8396bdd7975.jpg'
+                        let pp = 'https://i.imgur.com/034hRf9.jpeg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
@@ -628,10 +628,10 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                            this.sendBD(id, text, wm, pp, [[`Menu`, `.menu`], [action === 'add' ? 'Welcome 🙏' : 'Goodbye 👋', '@rasel.ganz']], {                      
+                            this.sendBD(id, text, wm, pp, [[`Menu`, `.menu`], [action === 'add' ? 'Welcome 🙏' : 'Goodbye 👋', '⃧ᴍ⃥⃧͢🌑⃥⃭⃧🌕̶̷⃮⃧ɴ ⃥ᴋ⃯⃗ɴ⃧ɪ⃬⃗ɢ⃧ʜ⃯⃗ᴛ ʙ⃔⃧ᴏ⃕⃧ᴛ⃕-ᴢ⃕🌙']], {                      
                               key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `${await this.getName(user)}`, vcard: `BEGIN: VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${user}\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}},
                               { 
-                               jpegThumbnail: await (await fetch("https://telegra.ph/file/27e90a619b30082694bde.jpg")).buffer(), fileName: action === 'add' ? `Welcome ${this.getName(user)} ` : `Goodbye ${this.getName(user)} `, mimetype: global.td, fileLength: global.fsdx, pageCount: global.pcdx,
+                               jpegThumbnail: await (await fetch("https://i.imgur.com/034hRf9.jpeg")).buffer(), fileName: action === 'add' ? `Welcome ${this.getName(user)} ` : `Goodbye ${this.getName(user)} `, mimetype: global.td, fileLength: global.fsdx, pageCount: global.pcdx,
                                mentions: [user],
                                contextInfo: {
                                externalAdReply :{
@@ -681,25 +681,25 @@ Untuk mematikan fitur ini, ketik #enable delete
 }
 
 global.dfail = async (type, m, conn) => {
-    let pp = await conn.profilePictureUrl(m.sender, 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
+    let pp = await conn.profilePictureUrl(m.sender, 'image').catch((_) => "https://i.imgur.com/034hRf9.jpeg")
     let lang = db.data.users[m.sender].language 
     let msg = {
-        rowner: `Perintah Ini Hanya Untuk @${global.owner[0]}`,
-        owner: `Perintah Ini Hanya Untuk @${global.owner[0]}`,
-        mods: `Perintah Ini Hanya Untuk Moderator`,
-        moderator: `Perintah Ini Hanya Untuk Moderator`,
-        prems: `Perintah Ini Hanya Untuk Pengguna Premium`,
-        premium: `Perintah Ini Hanya Untuk Pengguna Premium`,
-        group: `Perintah Ini Hanya Dapat Digunakan Di Dalam Grup`,
-        private: `Perintah Ini Hanya Dapat Digunakan Di Chat Pribadi @${conn.user.jid.split('@')[0]}`,
-        admin: `Perintah Ini Hanya Untuk Admin Grup`,
-        botAdmin: `Perintah Ini Aktif Ketika Bot Menjadi Admin`,
-        unreg: `Belum Terdaftar, Silahkan Daftar Dengan Mengetik #daftar nama.umur`,
-        dewasa: `Fitur DEWASA Tidak Aktif Silahkan Hubungi Owner Untuk Mengaktifkannya`,
-        nsfw: `Fitur NSFW Tidak Aktif Silahkan Hubungi Owner Untuk Mengaktifkannya`,
-        game: `Fitur GAME Tidak Aktif Silahkan Hubungi Owner Untuk Mengaktifkannya`,
-        rpg: `Fitur RPG Tidak Aktif Silahkan Hubungi Owner Untuk Mengaktifkannya`,
-        restrict: `Fitur Admin Tidak Aktif Silahkan Hubungi Owner Untuk Mengaktifkannya`,
+        rowner: `OWNER @${global.owner[0]}`,
+        owner: `OWNER @${global.owner[0]}`,
+        mods: ` Moderator`,
+        moderator: `Moderator`,
+        prems: `Premium`,
+        premium: `Premium`,
+        group: ` Group`,
+        private: `Private @${conn.user.jid.split('@')[0]}`,
+        admin: ` Admin Grup`,
+        botAdmin: `Bot admin`,
+        unreg: `#daftar nama.umur`,
+        dewasa: ` DEWASA`,
+        nsfw: `Fitur NSFW`,
+        game: `Fitur GAME`,
+        rpg: `Fitur RPG `,
+        restrict: `k`,
       }[type]
     if (msg) return conn.reply(m.chat,  msg, m, { mentions: conn.parseMention(msg), jpegThumbnail: await (await fetch(pp)).buffer() })
 }
@@ -728,7 +728,7 @@ function pickRandom(list) {
 }
 
 global.tmbnld = [
-    'https://telegra.ph/file/27e90a619b30082694bde.jpg',
+    'https://i.imgur.com/E9m8KW8.jpeg',
 ]
 
 global.tmbnlm = [
