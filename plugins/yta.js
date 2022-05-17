@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
 📌 *Title:* ${title}
 🎚 *Size:* ${fileSizeH}
 ✨ *Quality:* ${quality}
-${isLimit ? `❌ *Ukuran file di atas ${limit} MB, download sendiri*\n` : ''}🚀 *Link:* ${urlshort}` 
+${isLimit ? `❌ *Cant download ${limit} MB, download send*\n` : ''}🚀 *Link:* ${urlshort}` 
   await conn.sendMedia(m.chat, thumbnail, sentMsg, {jpegThumbnail: await(await fetch(thumbnail)).buffer(), caption: capt})
   if (!isLimit) await conn.sendMedia(m.chat, url, 0, {
   contextInfo: { mentionedJid: [m.sender],
