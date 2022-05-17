@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, args, command, isPrems, isOwner }) => {
   let limit
   if((isOwner || isPrems)) limit = 300
   else limit = 100
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Url?'
   const sentMsg = await m.reply(wait)
   try {
   let vid = await youtubedl(args[0])
@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, args, command, isPrems, isOwner }) => {
 📌 *Title:* ${title}
 🎚 *Size:* ${fileSizeH}
 ✨ *Quality:* ${quality}
-${isLimit ? `❌ *Ukuran file di atas ${limit} MB, download sendiri*\n` : ''}🚀 *Link:* ${urlshort}` 
+${isLimit ? `❌ *cant download ${limit} MB, download send*\n` : ''}🚀 *Link:* ${urlshort}` 
   await conn.sendMedia(m.chat, thumbnail, sentMsg, {jpegThumbnail: await(await fetch(thumbnail)).buffer(), caption: capt})
   if (!isLimit) await conn.sendMedia(m.chat, url, 0, {
   contextInfo: { mentionedJid: [m.sender],
