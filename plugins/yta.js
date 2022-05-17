@@ -4,12 +4,12 @@ const { servers, yta } = require('../lib/y2mate')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if (!text) throw `uhm urlnya mana?`
-  let ras = `url salah, perintah ini untuk mengunduh watch/shorts`
+  let ras = `url wrong watch/shorts`
   if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)|(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)/gi)) throw ra
   let limit 
   if((isOwner || isPrems)) limit = 250
   else limit = 100
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Url?'
   const sentMsg = await m.reply(wait)
   try {
   var audi = await youtubedl(args[0])
