@@ -1,5 +1,5 @@
 let handler = async(m, { conn, usedPrefix, command }) => {
-  await m.reply("Sedang mencari video porn untuk anda, jika video tidak muncul silahkan ulangi!")
+  await m.reply("🥲")
   try {
   var a = await scrape.tiktokporn()
   var { title, source, thumb, desc, upload, like, dislike, favorite, views, tags, video } = a
@@ -17,7 +17,7 @@ let handler = async(m, { conn, usedPrefix, command }) => {
 🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${"https://tikporntok.com/"+video}`)).data}`
   } finally {
   if("https://tikporntok.com/"+video) conn.sendBV(m.chat, sel, wm, "https://tikporntok.com/"+video, [['Next', '.tiktokporn']], m, {jpegThumbnail: await(await fetch("https://tikporntok.com/"+thumb)).buffer()})
-  else return conn.sendB(m.chat, `Maaf media ${command} tidak ditemukan silahkan ulangi!`, wm, null, [["Repeat",  ".tiktokporn"]], m) 
+  else return conn.sendB(m.chat, `Maaf media ${command} !`, wm, null, [["Repeat",  ".tiktokporn"]], m) 
  }
 }
 handler.help = ['tiktokporn']
