@@ -1,5 +1,5 @@
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-  if(!text) return m.reply(`masukan query!`)
+  if(!text) return m.reply(` query!`)
   let res = pickRandom(await scrape.wallpaper(text))
   let { title, type, image } = res
   let capt = `*Title:* ${title}\n*Type:* ${type}`
